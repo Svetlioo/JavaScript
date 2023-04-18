@@ -35,18 +35,62 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`${ing1}, ${ing2}, ${ing3} `);
   },
+  orderPizza: function (mainIngridient, ...otherIngridients) {
+    console.log(mainIngridient);
+    console.log(...otherIngridients);
+  },
 };
 
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La piazza',
+  owner: 'Giovanni Rossi',
+};
 
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
 
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
 
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
 
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
 
+console.log(rest1);
+console.log(rest2);
 
+// console.log(3 || 'Jonas');
 
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
 
+// // Only null and undefined (bez 0 ili prazen string)
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
 
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
+
+// const x = [23, 5, 7];
+// add(...x);
+
+// restaurant.orderPizza('Mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
 // const mainMenu = [...restaurant.mainMenu];
 
 // const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
@@ -57,8 +101,6 @@ const restaurant = {
 // console.log(...letters);
 
 // const ingredient = [prompt('Ingridient 1'),prompt('Ingridient 2'),prompt('Ingridient 3')]
-
-
 
 // const newRestaurant = {
 //   founded: 1998,
