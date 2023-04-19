@@ -1,45 +1,131 @@
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-const openingHours = {
-  thu: {
-    open: 12,
-    close: 22,
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
   },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
+  printGoals: function (...NumofPlayers) {
+    console.log(...NumofPlayers);
+    console.log(`Number of goals scored: ${NumofPlayers.length}`);
   },
 };
+let i = 1;
+for (const goalScorer of game.scored) {
+  console.log(`Goal ${i}: ${goalScorer}`);
+  i++;
+}
+console.log(`Average odd is ${game.odds.team1 + game.odds.team2 / 2}.`)
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-  openingHours,
+// const openingHours = {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery(obj) {
-    console.log(obj);
-  },
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`${ing1}, ${ing2}, ${ing3} `);
-  },
-  orderPizza(mainIngridient, ...otherIngridients) {
-    console.log(mainIngridient);
-    console.log(...otherIngridients);
-  },
-};
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours,
+
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   orderDelivery(obj) {
+//     console.log(obj);
+//   },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`${ing1}, ${ing2}, ${ing3} `);
+//   },
+//   orderPizza(mainIngridient, ...otherIngridients) {
+//     console.log(mainIngridient);
+//     console.log(...otherIngridients);
+//   },
+// };
+
+// for (const day of Object.values(openingHours)) {
+//   console.log(day);
+// }
+
+// const keys = Object.keys(openingHours);
+// console.log(keys);
+
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// for (const [key, {open, close}] of entries) {
+//   console.log(`On ${key} we open at ${open} and close at ${close}.`)
+// }
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? 'closed';
+//   if (open == 'closed') {
+//     console.log('Closed');
+//     continue;
+//   }
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+
+// const users = [{ name: 'Jonas', email: 'hello@djami.io' }];
+// console.log(users?.name ?? 'Empty');
+
+// console.log(restaurant.openingHours.fri.open);
 
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -49,50 +135,6 @@ const restaurant = {
 //   console.log(`${i+1}: ${el}`);
 // }
 
-// const game = {
-//   team1: 'Bayern Munich',
-//   team2: 'Borrussia Dortmund',
-//   players: [
-//     [
-//       'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-//     ],
-//     [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-//     ],
-//   ],
-//   score: '4:0',
-//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-//   printGoals: function (...NumofPlayers) {
-//     console.log(...NumofPlayers);
-//     console.log(`Number of goals scored: ${NumofPlayers.length}`);
-//   },
-// };
 // const [players1, players2] = game.players;
 // const [gk, ...fieldPlayers] = players1;
 // console.log(players1,players2);
