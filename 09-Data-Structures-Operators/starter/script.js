@@ -27,64 +27,64 @@ console.log(
   `An event happened, on average, every ${90 / gameEvents.size} minutes.`
 );
 
-// const game = {
-//   team1: 'Bayern Munich',
-//   team2: 'Borrussia Dortmund',
-//   players: [
-//     [
-//       'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-//     ],
-//     [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-//     ],
-//   ],
-//   score: '4:0',
-//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-//   printGoals: function (...NumofPlayers) {
-//     console.log(...NumofPlayers);
-//     console.log(`Number of goals scored: ${NumofPlayers.length}`);
-//   },
-// };
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+  printGoals: function (...NumofPlayers) {
+    console.log(...NumofPlayers);
+    console.log(`Number of goals scored: ${NumofPlayers.length}`);
+  },
+};
 
-// const orderSet = new Set([
-//   'Pasta',
-//   'Pizza',
-//   'Pizza',
-//   'Risotto',
-//   'Pasta',
-//   'Pizza',
-// ]);
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
 
-// const rest = new Map();
-// rest.set('Name', 'Classico Italiano');
-// rest.set(1, 'Firenze, Italy');
-// console.log(rest.set(2, 'Lisbon,Portugal'));
+const rest = new Map();
+rest.set('Name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon,Portugal'));
 
 // const question = new Map([
 //   ['question', 'What is the best programming language in the world?'],
