@@ -1,48 +1,83 @@
 'use strict';
 
-// console.log('a+very+nice+string'.split('+'));
+const camelCase = function (list) {
+  const spisuk = String(list).split('\n');
+  let i = 1;
+  for (const variable of spisuk) {
+    const newvar = variable.toLowerCase().trim();
+    const indexof_ = newvar.indexOf('_');
+    const indexofCapital = newvar.indexOf('_') + 1;
+    console.log(
+      newvar
+        .replace(
+          newvar[indexof_] + `${newvar[indexofCapital]}`,
+          newvar[indexofCapital].toUpperCase()
+        )
+        .padEnd(20, ' ') + `${'✅'.repeat(i)}`
+    );
+    i++;
+  }
+};
+const list = `underscore_case
+ first_name
+Some_Variable
+ calculate_AGE
+delayed_departure`;
+// camelCase(list);
 
-// console.log('Jonas Schmedtmann'.split(' '));
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const text = document.querySelector('textarea').value;
+const button = document.querySelector('button');
 
-// const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+button.addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  console.log(text + '\n\n\n');
+  camelCase(text);
+});
+// // console.log('a+very+nice+string'.split('+'));
 
-// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-// console.log(newName);
+// // console.log('Jonas Schmedtmann'.split(' '));
 
-// const capitalizeName = function (name) {
-//   const names = name.split(' ');
-//   const namesUpper = [];
-//   for (const word of names) {
-//     namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
-//   }
-//   console.log(namesUpper.join(' '));
+// // const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+// // const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// // console.log(newName);
+
+// // const capitalizeName = function (name) {
+// //   const names = name.split(' ');
+// //   const namesUpper = [];
+// //   for (const word of names) {
+// //     namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+// //   }
+// //   console.log(namesUpper.join(' '));
+// // };
+
+// // capitalizeName('jessica ann smith davis');
+
+// // const message = 'Go to gate 23!';
+// // console.log(message.padStart(25, '==>').padEnd(35, '+'));
+
+// const maskCreditCard = function (number) {
+//   const str = String(number);
+//   const last = str.slice(-4);
+//   console.log(last.padStart(str.length, '*'));
+// };
+// maskCreditCard(931829038120);
+// maskCreditCard('3219839012830912830');
+// maskCreditCard(93120);
+
+// const message2 = 'Bad weather... All Departures Delayed... ';
+
+// console.log(message2.repeat(5));
+
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
 // };
 
-// capitalizeName('jessica ann smith davis');
-
-// const message = 'Go to gate 23!';
-// console.log(message.padStart(25, '==>').padEnd(35, '+'));
-
-const maskCreditCard = function (number) {
-  const str = String(number);
-  const last = str.slice(-4);
-  console.log(last.padStart(str.length, '*'));
-};
-maskCreditCard(931829038120);
-maskCreditCard('3219839012830912830');
-maskCreditCard(93120);
-
-const message2 = 'Bad weather... All Departures Delayed... ';
-
-console.log(message2.repeat(5));
-
-const planesInLine = function (n) {
-  console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
-};
-
-planesInLine(5);
-planesInLine(3);
-planesInLine(12);
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
 // const airline = 'TAP Air Portugal';
 // const plane = 'A320';
 
