@@ -65,12 +65,76 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+/////////////////////////////////////////////////
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// console.log(arr.slice());
+// console.log(arr.splice(-1));
+// const reversedArray = arr.reverse();
+// console.log(arr);
+// const arr2 = ['b', 'c', 'q'];
+
+// const arrays = arr.concat(arr2);
+
+// console.log(arrays.join(' - '));
+
+// const array = [24, 25, 30];
+
+// console.log(array[0]);
+// console.log(array.at(-1));
+// console.log(...array.slice(-1));
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i + 1}: You deposited ${movement}$\n`);
+//   } else {
+//     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}$\n`);
+//   }
+// }
+
+// console.log('\n\n\n');
+
+// movements.forEach(function (movement) {
+//   if (movement > 0) {
+//     console.log(`You deposited ${movement}$\n`);
+//   } else {
+//     console.log(`You withdrew ${Math.abs(movement)}$\n`);
+//   }
+// });
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}\n map: ${map}`);
+// });
 
-/////////////////////////////////////////////////
+const currenciiies = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+// console.log(currenciiies);
+
+currenciiies.forEach(function (value, key, map) {
+  console.log(map);
+});
+
+const julia = [3, 5, 2, 12, 7];
+const kate = [4, 1, 15, 8, 3];
+
+const checkDogs = function (arr1, arr2) {
+  const slicedArray = arr1.slice(1, -2);
+  console.log(`Sliced array: ${slicedArray}`);
+  const combined = slicedArray.concat(arr2);
+  console.log(`Both arrays array: ${combined}`);
+  combined.forEach(function (dog, index) {
+    const type = dog >= 3 ? 'adult' : 'puppy';
+    console.log(`Dog number ${index + 1} is a ${type} and is ${dog} years old`);
+  });
+};
+
+checkDogs(julia, kate);
+console.log(julia);
